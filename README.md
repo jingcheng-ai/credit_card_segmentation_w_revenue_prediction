@@ -1,10 +1,8 @@
 # credit_card_segmentation_w_revenue_prediction
 
-# Credit Card Behavioral Segmentation
-## Early Lifecycle Customer Intelligence & Risk-Adjusted Revenue Forecasting
+## Early Lifecycle Credit Card Customer Intelligence & Risk-Adjusted Revenue Forecasting
 
-**Author:** Jing Cheng  
-**Background:** 20+ years in consumer credit analytics across major financial institutions  
+**Author:** Jing Cheng   
 **Note:** This project replicates a real-world analysis using synthetically generated data. No proprietary data was used. AI-assisted implementation; all analytical design, methodology, and business interpretation are the author's own.
 
 ---
@@ -20,7 +18,7 @@ A major financial institution's credit card revenue model (XGBoost regression) p
 | Model | R² | Spearman |
 |---|---|---|
 | Baseline — XGBoost, no segmentation | < 0.15 | — |
-| Segmentation + within-segment prediction | between 0.3 ~ 0.50 | ~ 0.55 |
+| Segmentation + within-segment prediction | between 0.3 ~ 0.50 per segment | overall correlation with true revenue ~ 0.55 |
 
 > Segmentation establishes the structure of the portfolio and improves revenue forecasting significantly.
 
@@ -40,13 +38,13 @@ A major financial institution's credit card revenue model (XGBoost regression) p
 | High Revolver | ~6% | $3,000 | Highest revenue — consistent purchase revolvers |
 | Early Churn | ~5% | $25 | Uses card occasionally then churns within 12 months |
 | High Risk | ~2% | -$2,000 | Net negative after charge-off losses |
-| Dormant | ~10% of booked | — | Excluded pre-modeling — high bureau score, did not activate |
+| Dormant | ~10% of booked | — | Excluded pre-modeling — large proportion with high bureau score low line assignment, did not activate |
 
 **Findings for Immediate Action:**
 
 | Segment | Finding | Action |
 |---|---|---|
-| Gamer | 10% of active portfolio — zero revenue, exit around month 13–15 | Redesign BT program with minimum spending requirement |
+| Gamer | 10% of active portfolio — negative revenue, exit around month 13–15 | Redesign BT program with minimum spending requirement |
 | High Risk | 2% of portfolio — net -$2,000 per account after charge-off losses | Tight monitoring and early collection strategy |
 | Dormant | ~10% of booked accounts — high bureau score, card not activated | Credit line re-evaluation and activation incentive |
 
@@ -66,6 +64,8 @@ A major financial institution's credit card revenue model (XGBoost regression) p
 - Predict segment membership using pre-campaign attributes only (bureau + bank relationship)
 - No income (internal restriction), no BT offer or credit limit (unknown pre-campaign — leakage)
 - Predict risk-adjusted revenue within each segment separately
+
+**All steps:
 - Feature engineering + K-Means clustering + XGBoost classifier + XGBoost regression
 
 ---
@@ -109,7 +109,7 @@ cc_behavioral_segmentation.ipynb
 |---|---|
 | Python | Core implementation |
 | pandas / numpy | Data manipulation and simulation |
-| scikit-learn | K-Means, GMM, DBSCAN, Random Forest, GBM |
+| scikit-learn | K-Means, GMM, DBSCAN, Random Forest |
 | scipy | Spearman rank correlation |
 | matplotlib / seaborn | Visualization |
 
@@ -124,7 +124,7 @@ cc_behavioral_segmentation.ipynb
 ## About
 
 Senior data scientist with 20+ years in financial services — JPMorgan, Citi, PNC.  
-Specializing in AML modeling, fraud detection, credit risk, and customer analytics.  
+Specializing in customer analytics, AML modeling, fraud detection and credit risk.  
 Caltech AI/ML certificate (2025).
 
 [LinkedIn](https://linkedin.com/in/jing-cheng-analytics)
