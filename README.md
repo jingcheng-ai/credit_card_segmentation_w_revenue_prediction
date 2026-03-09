@@ -18,7 +18,7 @@ A major financial institution's credit card revenue model (XGBoost regression) p
 | Model | R² | Spearman |
 |---|---|---|
 | Baseline — XGBoost, no segmentation | < 0.15 | — |
-| Segmentation + within-segment prediction | between 0.3 ~ 0.50 per segment | overall correlation with true revenue ~ 0.55 |
+| Segmentation + within-segment prediction | between 0.3 ~ 0.50 per segment | overall correlation with true revenue ~ 0.45 |
 
 > Segmentation establishes the structure of the portfolio and improves revenue forecasting significantly.
 
