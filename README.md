@@ -8,9 +8,9 @@
 
 ## Business Problem
 
-A major financial institution's credit card revenue model (XGBoost regression) predicted poorly across the newly booked portfolio — R² < 0.15. Pre-campaign customer attributes alone had limited power to forecast 24-month interest income.
+A major financial institution's credit card revenue model (XGBoost regression) predicted poorly across the newly booked portfolio — R² < 0.15. Pre-campaign customer attributes alone had limited power to forecast 24-month risk adjusted revenue.
 
-**Root cause:** The portfolio contains fundamentally different customer types. A single model applied to a mixed population cannot capture the distinct behavioral logic of revolvers, transactors, gamers, and high-risk accounts simultaneously.
+**Root cause:** The portfolio contains fundamentally different customer usage types. A single model applied to a mixed population cannot capture the distinct behavioral logic of revolvers, transactors, gamers, and high-risk accounts simultaneously.
 
 **Proposed solution:** Segment first, then predict within segment.
 
