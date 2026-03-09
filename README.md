@@ -1,4 +1,3 @@
-# credit_card_segmentation_w_revenue_prediction
 
 ## Early Lifecycle Credit Card Customer Intelligence & Risk-Adjusted Revenue Forecasting
 
